@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+//The following script was not contributed by Nerdsville, but is essential to the operation of the rest of the code
+<script>
+function hideFrame(){
+  var fr=document.getElementById('frame');
+  fr.style.display="none";
+}
+</script>
+<script>
+//This function can be modified to use as many variables as you would like to pull by div ID in html; I will place a sample variable with tips on how you would use the function; We will be modifying the second "getElementById".
+function transfer(){
+  var name=document.getElementById('frame').contentWindow.document.getElementById('sample')
+  document.write(name.textContent);
+}
+</script>
+  </head>
+//We put the "onload" attribute to the "body" tag in order to execute these scripts seamlessly upon execution of this HTML
+  <body onload="hideFrame();transfer();">
+  //Replace "src.html" with your html source FROM YOUR DOMAIN, this may not be used to pull from other URL's because of the Same Origin Policy!
+  <iframe id="frame" src="/src.html">
+  This text should never be displayed, if it is, something seriously went wrong... Or maybe you are just using a browser that does not support iFrame :)
+  </iframe>
+  
+  </body>
+  <footer>
+  //You may remove this footer, it is just here in case you would like to give credit to the contributer!
+  Transfer functions were contributed by <a href="http://nerdsville.net">Nerdsville 2013</a>
+  </footer>
+</html>
